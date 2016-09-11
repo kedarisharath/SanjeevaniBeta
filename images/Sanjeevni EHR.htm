@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:3000/twitter -->
+<html lang="en" ng-app="app" class="ng-scope gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    
+    <!-- Meta, title, CSS, favicons, etc. -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sanjeevni EHR</title>
+    <!-- JQuery -->
+    <script type="text/javascript" src="./Sanjeevni EHR_files/jquery.js"></script>
+    <!-- Bootstrap -->
+    <link href="./Sanjeevni EHR_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./Sanjeevni EHR_files/font-awesome.min.css" rel="stylesheet">
+    <!-- prettyphoto -->
+    <link href="./Sanjeevni EHR_files/prettyPhoto.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="./Sanjeevni EHR_files/custom.min.css" rel="stylesheet">
+    <link href="./Sanjeevni EHR_files/custom1.min.css" rel="stylesheet">
+
+    <!-- new files -->
+    <script src="./Sanjeevni EHR_files/angular.js"></script>
+    <script src="./Sanjeevni EHR_files/ng-draggable-widgets.js"></script>
+    <script src="./Sanjeevni EHR_files/demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Sanjeevni EHR_files/demo.css">
+
+    <script type="text/javascript" src="./Sanjeevni EHR_files/angular-route.min.js"></script>
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="./Sanjeevni EHR_files/dashboard.css">
+    <!-- ng-Dialog box  -->
+    
+    <link rel="stylesheet" href="./Sanjeevni EHR_files/ngDialog.css">
+    <link rel="stylesheet" href="./Sanjeevni EHR_files/ngDialog-Default.css">
+
+    <!-- Highcharts -->
+    <script src="./Sanjeevni EHR_files/highcharts.js"></script>
+    <script src="./Sanjeevni EHR_files/highcharts-3d.js"></script>
+    <script src="./Sanjeevni EHR_files/highcharts-more.js"></script>
+    <script src="./Sanjeevni EHR_files/solid-gauge.js"></script>
+    <script src="./Sanjeevni EHR_files/exporting.js"></script>
+    
+     <style type="text/css">
+      .divbutton {
+        /*height: 100px;*/
+        /*background: #0000ff;*/
+      }
+    </style>
+
+    <style>
+        .chartSize {
+            height: 100%;
+            width: 50%;
+            position: relative;
+        }
+
+        .scrollit {
+            overflow: scroll;
+            height: 350px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            var chart3 = new Highcharts.Chart({
+                chart: {
+                    renderTo:'container2',
+                    backgroundColor: '#EDEEFA',
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45
+                    }
+                },
+                title: {
+                    text: 'Tweets Polarity'
+                },
+                subtitle: {
+                    text: "[ weather Mumbai ]"
+                },
+                plotOptions: {
+                    pie: {
+                        innerSize: 100,
+                        depth: 45
+                    }
+                },
+                series: [{
+                    name: 'Tweets Polarity',
+                    data: [
+                        ['Neutral', 39],
+                        ['Negative', 2],
+                        ['Positive', 9]
+
+
+                    ]
+                }]
+            });
+            chart3.render();
+
+        });
+
+    </script>
+  </head>
+
+  <body class="nav-md ng-scope" ng-controller="dragController" data-gr-c-s-loaded="true">
+    
+    <div class="container">
+        <div class="row">
+        <div class="navbar navbar-default" style="background-color: #021712;;" role="navigation">
+          <div class="col-md-4">
+          <div class="navbar-header" style="padding-left:60px; background-color: #021712;">
+            <span class="navbar-brand">Sanjeevni EHR</span>
+            
+          </div>
+          </div>
+
+          <div class="col-md-6">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class-"icon-bar"="">--</span>
+            </button>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li>
+                    <a href="http://localhost:3000/twitter#" class="">
+                      <span style="color:#fff">Dashboard</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://localhost:3000/twitter#">
+                      <span style="color:#fff">Help</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://localhost:3000/twitter#">
+                      <span style="color:#fff">Community</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://localhost:3000/twitter#">
+                      <span style="color:#fff">Premium</span>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="http://localhost:3000/twitter#">
+                  <span class="glyphicon glyphicon-off" style="color:#fff">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left_col col-xs-3" style="background-color:#072C0E">
+          <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <a class="preview" href="./Sanjeevni EHR_files/ami.jpg" rel="prettyPhoto">
+                  <img src="./Sanjeevni EHR_files/ami.jpg" alt="..." class="img-circle profile_img">
+                </a>
+              </div>
+              <br>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br>
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <span style="font-size:medium">Amitesh Jaiswal</span>
+                    <br><br><br><br>
+                <ul class="nav side-menu">
+                  <li><a href="http://localhost:3000/twitter#"><i class="fa fa-edit"></i> Allergies </a></li>
+                  <li><a><i class="fa fa-table"></i> Medications</a></li>
+                  <li><a><i class="fa fa-desktop"></i> Doctor Notes</a></li>
+                  <li><a><i class="fa fa-clone"></i> Medical Records</a></li>
+                  <li><a><i class="fa fa-clone"></i> Immunities</a></li>
+                  <li><a><i class="fa fa-clone"></i> Twitter Sentiments</a></li>
+                  <li><a><i class="fa fa-clone"></i> Word Cloud</a></li>
+                  <li><a><i class="fa fa-clone"></i> Spark Analytics</a></li>
+                  <li><a><i class="fa fa-bar-chart-o"></i>Analytics Dashboard <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="http://localhost:3000/fixed_sidebar.html">Twitter</a></li>
+                      <li><a href="http://localhost:3000/fixed_footer.html">Realtime</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-clone"></i> Update Profile </a></li>
+                  <li><a><i class="fa fa-clone"></i> View Profile </a></li>
+                  <li><a><i class="fa fa-clone"></i> Logout </a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <!-- <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div> -->
+            <!-- /menu footer buttons -->
+        </div>
+        <div class="col-xs-5">
+          <!-- page content -->
+          <br>
+            <input class="form-control ng-pristine ng-valid ng-touched" ng-model="searchText" type="text" placeholder="Enter Search Query">
+          <br>
+          <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Tweets Panel
+                    </div>
+                    <div id="tweetBox" class="pull-right borderShadow">
+                        <div class="scrollit">
+                            <table border="1">
+                                            
+                                            <tbody><tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 02:30 Temperature 28C clouds, Haze Wind SW 13 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 02:00 Temperature 28C clouds, Haze Wind SW 15 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 01:30 Temperature 28C clouds, Haze Wind W 17 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 01:00 Temperature 0C few clouds, mist Wind SW 13 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 00:30 Temperature 28C few clouds, mist Wind SW 13 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Hey I would also love to do this challenge , let's c whether it can stand in Mumbai rainy weather.Will try soon.I nominate myslf #Eyeconic22
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 12 00:00 Temperature 0C few clouds, mist Wind SW 13 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 23:30 Temperature 29C few clouds, mist Wind W 24 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 23:00 Temperature 0C few clouds, mist Wind SW 20 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 22:30 Temperature 0C few clouds, mist Wind W 22 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 22:00 Temperature 28C few clouds, mist Wind SW 15 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                To mumbai.... Cool weather 😉😲
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 20:30 Temperature 28C overcast, hazy Wind W 7 km/h  Humidity 84% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Mumbai Times Emami to launch more weather-agnostic products: Kolkata, July 11 : FMCG major Emami ... https://t.co/uEf2Egn9kM MumbaiTimes
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 20:00 Temperature 0C few clouds, mist Wind W 15 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 19:30 Temperature 0C drizzle Wind W 24 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 19:00 Temperature 28C drizzle Wind W 22 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 18:30 Temperature 29C drizzle Wind W 22 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Mumbai weather pleasantly surprised me today. Also watching the rough sea and swaying trees during meeting was very distracting
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Weather Report
+
+Pune🍺🍺
+Lonavla🍺🍺🍺🍺
+Karjat🍺
+Kalyan🍺🍺
+Thane🍺🍺🍺
+Mumbai🍻🍻🍻
+Vasai Virar🍻🍻🍻🍻 Nashik🍻🍻🍻🍻🍻🍻🍻🍻
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                it's been a crazy productive monday and i'm loving every bit of it! mumbai weather is amazing right now! #rain #wind #breeze #love
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Just landed in Mumbai for #SafetyNetWorkshop 12-13th July by @povmumbai @APC_News. Its raining. Lovely weather. I forgot to bring umbrella
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 18:00 Temperature 29C drizzle Wind SW 15 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                 @SkymetWeather: #Monsoon2016: Wait for good #Mumbai rains to end soon : https://t.co/7mHsylzbLL #MumbaiRains
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 17:30 Temperature 0C light rain Wind SW 15 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 17:00 Temperature 29C few clouds, mist Wind W 28 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                 @SkymetWeather: #Monsoon2016: Wait for good #Mumbai rains to end soon : https://t.co/7mHsylzbLL #MumbaiRains
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                 @SkymetWeather: #Monsoon2016: Wait for good #Mumbai rains to end soon : https://t.co/7mHsylzbLL #MumbaiRains
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Monsoon2016: Wait for good #Mumbai rains to end soon : https://t.co/7mHsylzbLL #MumbaiRains
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 16:30 Temperature 0C drizzle Wind W 19 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Weather outside is really amazing #mumbai #love #beautifulday #green #life #blogger… https://t.co/LKEKMwjHml
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 16:00 Temperature 0C drizzle Wind W 19 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 15:30 Temperature 28C drizzle Wind W 19 km/h  Humidity 90% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Gloomy weather in Mumbai
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                @iamsrk How's the weather in Mumbai? #AskSRK
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 15:00 Temperature 0C light rain Wind W 20 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 14:30 Temperature 29C light rain Wind W 24 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Mumbai Times Emami to launch more weather-agnostic products: Kolkata, July 11 : Fast Moving Consu... https://t.co/CW3z4wWbA4 MumbaiTimes
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                @adityab gloomy weather means Black Mumbai hyukhyuk ok sorry I'll show myself out
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 14:00 Temperature 0C light rain Wind W 28 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 13:30 Temperature 0C light rain Wind W 33 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                Back to base.. Welcomed by such glorious weather👍. Batteries are fully recharged😎. #bringit #mumbai #happytoreport
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 13:00 Temperature 0C light rain Wind W 28 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 12:30 Temperature 29C few clouds, mist Wind W 31 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 12:00 Temperature 0C few clouds, mist Wind W 26 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 11:30 Temperature 0C few clouds, mist Wind W 31 km/h  Humidity 0% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                @mugdha_ghag It seems weather in Bangalore is more therapeutic than weather in Mumbai 😁
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                @KapilSharmaK9 Good morning dear. How's the weather in Mumbai? Its raining ☔ heavily here
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                #Mumbai Jul 11 11:00 Temperature 29C light rain Wind SW 28 km/h  Humidity 85% India .. https://t.co/ghNjGxGJmr
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="./Sanjeevni EHR_files/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                So how U doing @AshishChowdhry It's been ages since I have said "Hello" 2 U ..Hw's weather in Mumbai it's Freaking Cold in Pune..💧💧Raining☁☔
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+              <button class="btn btn-primary" type="button" ng-click="findTweets()" ;="" style="margin-left:200px;">Find Sentiments</button>
+        </div>
+        <!-- /.col-xs-5 -->
+
+        <div class="col-xs-4">
+            <br>
+            <select ng-model="stateList" class="btn btn-primary ng-pristine ng-untouched ng-valid">
+              <option value="">------------Select State------------</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Orissa">Orissa</option>
+              <option value="Pondicherry">Pondicherry</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttaranchal">Uttaranchal</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+            <br>
+                <div class="panel panel-default">
+                    <div class="panel-Pie Chart Representing Polarity">
+                    </div>
+                    <div class="panel-body">
+                        <div id="container2" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 381px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="381" height="400"><desc>Created with Highcharts 4.2.5</desc><defs><clippath id="highcharts-1"><rect x="0" y="0" width="381" height="400"></rect></clippath></defs><rect x="0" y="0" width="381" height="400" fill="#EDEEFA" class=" highcharts-background"></rect><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(10,61) scale(1 1)" style=""><path fill="rgb(99,156,211)" d="M 97.26943507642481 148.75696192719965 L 97.26943507642481 172.62181579224563 L 146.3847175382124 179.2433348286458 L 146.3847175382124 155.37848096359983 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(119,212,100)" d="M 104.99960611335112 131.9194522459995 L 104.99960611335112 155.78430611104548 L 150.24980305667555 170.82457998804574 L 150.24980305667555 146.95972612299977 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(119,212,100)" d="M 195.46010196258956 91.2893275093971 L 195.46010196258956 115.15418137444307 L 195.48005098129477 150.5095176197445 L 195.48005098129477 126.64466375469854 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(42,42,47)" d="M 97.26962236617683 148.75626733287604 L 97.26962236617683 172.621121197922 L 146.3848111830884 179.24298753148398 L 146.3848111830884 155.378133666438 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(119,212,100)" d="M 104.99960611335112 131.9194522459995 C 121.91580090216527 106.47240414084396 155.6950179195305 91.30054610451786 195.46010196258956 91.2893275093971 L 195.46010196258956 115.15418137444307 C 155.6950179195305 115.16539996956384 121.91580090216527 130.33725800588994 104.99960611335112 155.78430611104548 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(119,212,100)" d="M 150.24980305667555 146.95972612299977 C 158.70790045108262 134.236202070422 175.59750895976524 126.65027305225892 195.48005098129477 126.64466375469854 L 195.48005098129477 150.5095176197445 C 175.59750895976524 150.5151269173049 158.70790045108262 158.10105593546797 150.24980305667555 170.82457998804574 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(42,42,47)" d="M 104.99918071469018 131.9200921819257 L 104.99918071469018 155.78494604697167 L 150.24959035734508 170.82489995600884 L 150.24959035734508 146.96004609096286 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(99,156,211)" d="M 195.47963267963047 91.2893233479828 L 195.47963267963047 115.15417721302877 L 195.48981633981523 150.50951553903738 L 195.48981633981523 126.64466167399141 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(42,42,47)" d="M 97.26962236617683 148.75626733287604 C 98.92244022317861 142.62669169381758 101.24520817324071 137.5673433741583 104.99918071469018 131.9200921819257 L 104.99918071469018 155.78494604697167 C 101.24520817324071 161.43219723920427 98.92244022317861 166.49154555886355 97.26962236617683 172.621121197922 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(42,42,47)" d="M 146.3848111830884 155.378133666438 C 147.21122011158928 152.31334584690876 148.37260408662036 149.78367168707916 150.24959035734508 146.96004609096286 L 150.24959035734508 170.82489995600884 C 148.37260408662036 173.64852555212514 147.21122011158928 176.17819971195473 146.3848111830884 179.24298753148398 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(99,156,211)" d="M 295.5 162 C 295.5 201.052429175127 250.72847498307937 232.71067811865476 195.5 232.71067811865476 C 140.27152501692063 232.71067811865476 95.5 201.052429175127 95.5 162 L 95.5 185.86485386504597 C 95.5 181.1810040864571 96.02886705752222 177.2227878899251 97.26943507642481 172.62181579224563 L 97.26943507642481 148.75696192719965 C 96.02886705752222 153.3579340248791 95.5 157.31615022141114 95.5 162 L 95.5 185.86485386504597 C 95.5 224.91728304017298 140.27152501692063 256.5755319837007 195.5 256.5755319837007 C 250.72847498307937 256.5755319837007 295.5 224.91728304017298 295.5 185.86485386504597 Z" transform="translate(0,0)" visibility="visible"></path><path fill="rgb(99,156,211)" d="M 195.48981633981523 126.64466167399141 C 223.10405325859733 126.64068470731031 245.49437468271316 142.4665848822633 245.49999896293065 161.99279906482604 C 245.50562324314814 181.51901324738878 223.12442057896686 197.3513613593275 195.51018366018477 197.3553383260086 C 167.89594674140267 197.35931529268967 145.50562531728684 181.5334151177367 145.50000103706935 162.00720093517396 C 145.49932574583934 159.66274427886609 145.76376295014265 157.68145402924628 146.3847175382124 155.37848096359983 L 146.3847175382124 179.2433348286458 C 141.21298947419695 198.42404572619898 159.01013648793412 216.93763916915057 186.13575797521125 220.5946031536687 C 213.26137946248838 224.2515671381868 239.44355439777212 211.66708379899933 244.6152824617876 192.48637290144615 C 249.78701052580305 173.30566200389296 231.9898635120659 154.79206856094137 204.86424202478878 151.13510457642326 C 201.60734628157164 150.69602337639023 198.80537873956172 150.50903803602938 195.48981633981523 150.50951553903738 Z" transform="translate(0,0)" visibility="visible"></path><g stroke="#7cb5ec" stroke-width="1" stroke-linejoin="round" x="195.5" y="162" r="100" innerR="50" start="-1.571" end="3.33"><path fill="#7cb5ec" d="M 195.47963267963047 91.2893233479828 C 250.70810651719464 91.28136941462063 295.4887493654263 122.93316976452667 295.4999979258613 161.98559812965212 C 295.5112464862963 201.03802649477757 250.7488411579337 232.702722718655 195.52036732036953 232.71067665201718 C 140.29189348280534 232.71863058537937 95.51125063457373 201.06683023547333 95.50000207413872 162.01440187034788 C 95.49865149167869 157.32548855773211 96.02752590028528 153.36290805849254 97.26943507642481 148.75696192719965 L 146.3847175382124 155.37848096359983 C 141.21298947419695 174.559191861153 159.01013648793412 193.0727853041046 186.13575797521125 196.7297492886227 C 213.26137946248838 200.38671327314083 239.44355439777212 187.80222993395336 244.6152824617876 168.62151903640017 C 249.78701052580305 149.440808138847 231.9898635120659 130.9272146958954 204.86424202478878 127.27025071137729 C 201.60734628157164 126.83116951134426 198.80537873956172 126.6441841709834 195.48981633981523 126.64466167399141 Z" transform="translate(0,0)" visibility="visible"></path></g><g stroke="#434348" stroke-width="1" stroke-linejoin="round" x="195.5" y="162" r="100" innerR="50" start="3.33" end="3.581"><path fill="#434348" d="M 97.26962236617683 148.75626733287604 C 98.92244022317861 142.62669169381758 101.24520817324071 137.5673433741583 104.99918071469018 131.9200921819257 L 150.24959035734508 146.96004609096286 C 148.37260408662036 149.78367168707916 147.21122011158928 152.31334584690876 146.3848111830884 155.378133666438 Z" transform="translate(0,0)" visibility="visible"></path></g><g stroke="#90ed7d" stroke-width="1" stroke-linejoin="round" x="195.5" y="162" r="100" innerR="50" start="3.581" end="4.712"><path fill="#90ed7d" d="M 104.99960611335112 131.9194522459995 C 121.91580090216527 106.47240414084396 155.6950179195305 91.30054610451786 195.46010196258956 91.2893275093971 L 195.48005098129477 126.64466375469854 C 175.59750895976524 126.65027305225892 158.70790045108262 134.236202070422 150.24980305667555 146.95972612299977 Z" transform="translate(0,0)" visibility="visible"></path></g></g><g class="highcharts-markers highcharts-series-0" transform="translate(10,61) scale(1 1)"></g></g><g class="highcharts-button" style="cursor:default;" stroke-linecap="round" transform="translate(347,10)"><title>Chart context menu</title><rect x="0.5" y="0.5" width="24" height="22" fill="white" stroke="none" stroke-width="1" rx="2" ry="2"></rect><path fill="#E0E0E0" d="M 6 6.5 L 20 6.5 M 6 11.5 L 20 11.5 M 6 16.5 L 20 16.5" stroke="#666" stroke-width="3"></path><text x="0" style="color:black;fill:black;" y="12"></text></g><text x="191" text-anchor="middle" class="highcharts-title" style="color:#333333;font-size:18px;fill:#333333;width:317px;" y="24"><tspan>Tweets Polarity</tspan></text><text x="191" text-anchor="middle" class="highcharts-subtitle" style="color:#555555;fill:#555555;width:317px;" y="46"><tspan>[ weather Mumbai ]</tspan></text><g class="highcharts-data-labels highcharts-series-0 highcharts-tracker" visibility="visible" transform="translate(10,61) scale(1 1)" opacity="1" style=""><path fill="none" d="M 304.7975841968305 239.60163613420178 C 299.7975841968305 239.60163613420178 273.2657267493402 233.43753019199548 266.2540628621046 224.9618845214618 L 259.242398974869 216.48623885092812" stroke="#7cb5ec" stroke-width="1"></path><path fill="none" d="M 64.28182718183132 130.87167125522313 C 69.28182718183132 130.87167125522313 79.47110501199126 133.34380721022274 89.93272669123795 136.74299414834715 L 100.39434837048464 140.14218108647157" stroke="#434348" stroke-width="1"></path><path fill="none" d="M 92.17227073453692 76.96084632654322 C 97.17227073453692 76.96084632654322 130.12913101256234 83.71546973055936 136.02322575733132 93.00307691108151 L 141.9173205021003 102.29068409160365" stroke="#90ed7d" stroke-width="1"></path><g style="" transform="translate(310,230)"><text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #FFFFFF, 0 0 3px #FFFFFF;fill:#000000;text-rendering:geometricPrecision;" y="16"><tspan>Neutral</tspan></text></g><g style="" transform="translate(0,121)"><text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #FFFFFF, 0 0 3px #FFFFFF;fill:#000000;text-rendering:geometricPrecision;" y="16"><tspan>Negative</tspan></text></g><g style="" transform="translate(33,67)"><text x="5" style="font-size:11px;font-weight:bold;color:#000000;text-shadow:0 0 6px #FFFFFF, 0 0 3px #FFFFFF;fill:#000000;text-rendering:geometricPrecision;" y="16"><tspan>Positive</tspan></text></g></g><g class="highcharts-legend"><g><g></g></g></g><g class="highcharts-legend"><g><g></g></g></g><g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g><text x="371" text-anchor="end" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;" y="395">Highcharts.com</text></svg></div></div>
+                    </div>
+                </div>
+            </div>
+          <!-- /page content -->
+        </div>
+      </div>
+      
+      <div class="row" style="background-color:#021712; height:50px;">
+        <p style="text-align:center;color:#fff; padding:10px;"><strong>@Copy-right Sanjeevni-EHR</strong></p>
+      </div>
+    
+    
+    <!-- jQuery -->
+    <script src="./Sanjeevni EHR_files/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./Sanjeevni EHR_files/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="./Sanjeevni EHR_files/custom.min.js"></script>
+    <script src="./Sanjeevni EHR_files/ngDialog.js"></script>
+    
+    <!-- /gauge.js -->
+  
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sanjeevni EHR</title>
+    <!-- JQuery -->
+    <script  type="text/javascript" src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- prettyphoto -->
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet">
+
+    <!-- new files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="build/js/ng-draggable-widgets.js"></script>
+    <script src="demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+    <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- ng-Dialog box  -->
+    
+    <link rel="stylesheet" href="css/ngDialog.css">
+    <link rel="stylesheet" href="css/ngDialog-Default.css">
+
+    <!-- Highcharts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    
+    <style>
+        .chartSize {
+            height: 100%;
+            width: 50%;
+            position: relative;
+        }
+
+        .scrollit {
+            overflow: scroll;
+            height: 350px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            var chart3 = new Highcharts.Chart({
+                chart: {
+                    renderTo:'container2',
+                    backgroundColor: '#EDEEFA',
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45
+                    }
+                },
+                title: {
+                    text: 'Tweets Polarity'
+                },
+                subtitle: {
+                    text: "[ <%= searchQuery %> ]"
+                },
+                plotOptions: {
+                    pie: {
+                        innerSize: 100,
+                        depth: 45
+                    }
+                },
+                series: [{
+                    name: 'Tweets Polarity',
+                    data: [
+                        ['Neutral', <%= polarity[2] %>],
+                        ['Negative', <%= polarity[1] %>],
+                        ['Positive', <%= polarity[0] %>]
+                    ]
+                }]
+            });
+            chart3.render();
+
+        });
+
+    </script>
+  </head>
+
+  <body class="nav-md" ng-controller="dragController">
+    
+    <div class="container">
+        <div class="row">
+        <div class="navbar navbar-default" style="background-color: #021712;;"role="navigation">
+          <div class="col-md-4">
+          <div class="navbar-header" style="padding-left:60px; background-color: #021712;">
+            <a href="index.html"><span class="navbar-brand">Sanjeevni EHR</span></a>
+          </div>
+          </div>
+
+          <div class="col-md-6">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only" class="navbar-toggle">Toggle Navigation</span>
+              <span class-"icon-bar">--</span>
+            </button>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li>
+                    <a href="#" class="">
+                      <span style="color:#fff">Dashboard</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Help</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Community</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Premium</span>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#">
+                  <span class="glyphicon glyphicon-off" style="color:#fff">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left_col col-xs-3" style="background-color:#072C0E" style="height:100%;">
+          <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <a  class="preview" href="images/ami.jpg" rel="prettyPhoto">
+                  <img src="images/ami.jpg" alt="..." class="img-circle profile_img">
+                </a>
+              </div>
+              <br>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br>
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <span style="font-size:medium">Amitesh Jaiswal</span>
+                    <br><br><br><br>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-edit"></i> Allergies <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showAllAlergies.html">Show All Allergies</a></li>
+                      <li><a href="addAllergies.html">Add new Allergy</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medical Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showAllMedicalHistoryRecord.html">Show All Medical History Record</a></li>
+                      <li><a href="addMedicalHistoryRecord.html">Add Medical Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medications Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showMedicationRecords.html">Show Medication Record</a></li>
+                      <li><a href="addMedicationRecord.html">Add Medication Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Vaccine & Immunization Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showTestResults.html">Show Test Record</a></li>
+                      <li><a href="addMedicalTest.html">Add Test Result</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="showDoctorNotes.html"><i class="fa fa-desktop"></i> Doctor Notes</a></li>
+                  <li><a href="twitter.html"><i class="fa fa-clone"></i> Twitter Sentiments</a></li>
+                  <li><a href="wordCloud.html"><i class="fa fa-clone"></i> Word Cloud</a></li>
+                  <li><a><i class="fa fa-clone"></i> Spark Analytics</a></li>
+                  <li><a><i class="fa fa-bar-chart-o"></i>Analytics Dashboard <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Twitter</a></li>
+                      <li><a href="fixed_footer.html">Realtime</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="updateProfile.html"><i class="fa fa-clone"></i> Update Profile </a></li>
+                  <li><a href="start.html"><i class="fa fa-clone"></i> Logout </a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar -->
+
+        </div>
+        <div class="col-xs-5">
+          <!-- page content -->
+          <br>
+            <input class="form-control" ng-model="searchText" type="text" placeholder="Enter Search Query">
+          <br>
+          <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Tweets Panel
+                    </div>
+                    <div id="tweetBox" class="pull-right borderShadow">
+                        <div class="scrollit">
+                            <table border="1">
+                                            <% for(var i = 0;i < tweets.length; i++) { %>
+                                            <tr>
+                                                <td style="padding-left: 10px;">
+
+                                                    <div class="row" style="background: #FAFAFA">
+                                                        <div class="col-xs-2">
+                                                            <img src="images/tweet.png" width="40px" height="40px">
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <font face="Comic Sans MS">
+                                                                <%= tweets[i] %>
+                                                                </font>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+              <button class="btn btn-primary" type="button" ng-click="findTweets()"; style="margin-left:200px;">Find Sentiments</button>
+        </div>
+        <!-- /.col-xs-5 -->
+
+        <div class="col-xs-4">
+            <br>
+            <select ng-model="stateList" class="btn btn-primary">
+              <option value="">------------Select State------------</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Orissa">Orissa</option>
+              <option value="Pondicherry">Pondicherry</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttaranchal">Uttaranchal</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+            <br>
+                <div class="panel panel-default">
+                    <div class="panel-Pie Chart Representing Polarity">
+                    </div>
+                    <div class="panel-body">
+                        <div id="container2"></div>
+                    </div>
+                </div>
+            </div>
+          <!-- /page content -->
+        </div>
+      </div>
+      
+      <div class="row" style="background-color:#021712; height:50px;">
+        <p style="text-align:center;color:#fff; padding:10px;"><strong>@Copy-right Sanjeevni-EHR</strong></p>
+      </div>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="js/custom.min.js"></script>
+    <script src='js/ngDialog.js'></script>
+    
+  </body>
+</html>

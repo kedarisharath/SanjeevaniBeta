@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Sanjeevni EHR</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css'>
+		<!-- Font Awesome -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<!-- prettyphoto -->
+		<link href="css/prettyPhoto.css" rel="stylesheet">
+		<!-- Custom Theme Style -->
+		<link href="css/custom.min.css" rel="stylesheet">
+
+		<!-- new files -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+		<script src="js/ng-draggable-widgets.js"></script>
+		<script src="demo.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+		<script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
+		<!-- custom configuration-->
+		<link rel="stylesheet" href="assets/css/dashboard.css">
+		<!-- ng-Dialog box  -->
+		
+		<link rel="stylesheet" href="css/ngDialog.css">
+		<link rel="stylesheet" href="css/ngDialog-Default.css">
+
+	</head>
+
+
+	<body class="nav-md" ng-controller="dragController">
+		<div class="container">
+				<div class="row">
+				<div class="navbar navbar-default" style="background-color: #021712;;"role="navigation">
+					<div class="col-md-4">
+					<div class="navbar-header" style="padding-left:60px; background-color: #021712;">
+						<a href="index.html"><span class="navbar-brand">Sanjeevni EHR</span></a>
+						
+					</div>
+					</div>
+
+					<div class="col-md-6">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only" class="navbar-toggle">Toggle Navigation</span>
+							<span class-"icon-bar">--</span>
+						</button>
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav" style="padding-left:100px;">
+									<li>
+										<a href="#" class="">
+											<span style="color:#fff">Dashboard</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span style="color:#fff">Help</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span style="color:#fff">Community</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span style="color:#fff">Premium</span>
+										</a>
+									</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="#">
+									<span class="glyphicon glyphicon-off" style="color:#fff">Logout</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="left_col col-xs-3" style="background-color:#072C0E" style="height:100%;">
+					<!-- menu profile quick info -->
+						<div class="profile">
+							<div class="profile_pic">
+								<a  class="preview" href="images/ami.jpg" rel="prettyPhoto">
+									<img src="images/ami.jpg" alt="..." class="img-circle profile_img">
+								</a>
+							</div>
+							<br>
+						</div>
+						<!-- /menu profile quick info -->
+
+						<br>
+
+			<!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <span style="font-size:medium">Amitesh Jaiswal</span>
+                    <br><br><br><br>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-edit"></i> Allergies <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showAllAlergies.html">Show All Allergies</a></li>
+                      <li><a href="addAllergies.html">Add new Allergy</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medical Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showAllMedicalHistoryRecord.html">Show All Medical History Record</a></li>
+                      <li><a href="addMedicalHistoryRecord.html">Add Medical Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medications Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showMedicationRecords.html">Show Medication Record</a></li>
+                      <li><a href="addMedicationRecord.html">Add Medication Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Vaccine & Immunization Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showTestResults.html">Show Test Record</a></li>
+                      <li><a href="addMedicalTest.html">Add Test Result</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="showDoctorNotes.html"><i class="fa fa-desktop"></i> Doctor Notes</a></li>
+                  <li><a href="twitter.html"><i class="fa fa-clone"></i> Twitter Sentiments</a></li>
+                  <li><a href="wordCloud.html"><i class="fa fa-clone"></i> Word Cloud</a></li>
+                  <li><a><i class="fa fa-clone"></i> Spark Analytics</a></li>
+                  <li><a><i class="fa fa-bar-chart-o"></i>Analytics Dashboard <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Twitter</a></li>
+                      <li><a href="fixed_footer.html">Realtime</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="updateProfile.html"><i class="fa fa-clone"></i> Update Profile </a></li>
+                  <li><a href="start.html"><i class="fa fa-clone"></i> Logout </a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar -->
+				</div>
+				
+				<div class="col-xs-8" style="padding-left:150px;">
+	                <div style="text-align:center; padding:10px;">
+	                 <img src="/images/MedicalHistory_Record_logo.jpg" style="height:30px; width:30px; "> <span style="font-size:medium">Add new Medication Record </span>
+	                </div>
+              		<hr>
+                        <div class="form-group">
+                          <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' class="form-control" placeholder="Enter Date"/>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                          </div>
+                        </div>      
+	                <br>        
+	                <label> Name:</label> <input type="text" class="form-control" id="name" ><br>
+
+
+				 <label>Category:</label> 
+				 <select name="category_of_medication" id="category_of_medication" class="form-control">
+				 <option value="" selected></option>
+				          <option value="Anti-Infectives" >Anti-Infectives</option>
+				          <option value="Antineoplastic & Immunosuppressant Drugs">Antineoplastic & Immunosuppressant Drugs</option> 
+				          <option value="Autonomic & CNS Drugs, Neurology & Psych">Autonomic & CNS Drugs, Neurology & Psych</option> 
+				          <option value="Cardiovascular, Hypertension & Lipids">Cardiovascular, Hypertension & Lipids</option> 
+				          <option value="Dermatologicals/Topical Therapy">Dermatologicals/Topical Therapy</option> 
+				          <option value="Ear, Nose & Throat Medications">Ear, Nose & Throat Medications</option> 
+				          <option value="Endocrine/Diabetes">Endocrine/Diabetes</option> 
+				          <option value="Gastroenterology">Gastroenterology</option> 
+				          <option value="Immunology, Vaccines & Biotechnology">Immunology, Vaccines & Biotechnology</option> 
+				          <option value="Musculoskeletal & Rheumatology">Musculoskeletal & Rheumatology</option> 
+				          <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option> 
+				          <option value="Ophthalmology">Ophthalmology</option> 
+				          <option value="Respiratory, Allergy, Cough & Cold">Respiratory, Allergy, Cough & Cold</option> 
+				          <option value="Urologicals">Urologicals</option> 
+				          <option value="Vitamins, Hematinics & Electrolytes">Vitamins, Hematinics & Electrolytes</option> 
+				          <option value="Diagnostics & Miscellaneous Agents">Diagnostics & Miscellaneous Agents</option> 
+				          <option value="Others">Others</option> 
+				</select><br> 
+
+                <label>Disease or condition(prescribed for):</label>
+                <input type="text" class="form-control" id="condition">
+                <label>Type:</label> 
+                <select name="type_of_medication" id="type_of_medication" class="form-control">
+	                <option value="" selected></option>
+	                <option value="Capsules" >Capsules</option>
+	                <option value="Injection">Injection</option> 
+	                <option value="Ointment">Ointment</option> 
+	                <option value="Paste or Cream">Paste or Cream</option> 
+	                <option value="Lotion">Lotion</option> 
+	                <option value="Powder">Powder</option> 
+	                <option value="Solution">Solution</option> 
+	                <option value="Spray">Spray</option> 
+	                <option value="Syrup">Syrup</option> 
+	                <option value="Tablets">Tablets</option> 
+	                <option value="GelCaps">GelCaps</option> 
+	                <option value="Inhaler">Inhaler</option> 
+	                <option value="Suppository Pessary">Suppository Pessary</option> 
+	                <option value="Others">Others</option> 
+	            </select>
+              <br> 
+                
+                <label for="comment">Instructions:</label>
+                <textarea class="form-control" rows="5" id="Instructions" placeholder=" enter medication instructions... "></textarea>
+                <label>Dose Quntity:</label> <input type="text" class="form-control" id="DoseQuntity" ><br>
+                <label>Rate Quntity:</label> <input type="text" class="form-control" id="RateQuntity"><br> 
+                <label>Prescriber (Referred) Name:</label> <input type="text" class="form-control" id="ReferredName"><br>  <button type="button" class="btn btn-primary"> Create Medication Record </button>
+	            <a href="showAllMedicalHistoryRecord.html"><button type="button" class="btn btn-primary"> Cancel </button></a>
+	            <br>      
+          
+        	</div>
+			<div class="col-xs-1"></div>
+		</div>
+			<div class="row" style="background-color:#021712; height:50px;">
+				<p style="text-align:center;color:#fff; padding:10px;"><strong>@Copy-right Sanjeevni-EHR</strong></p>
+			</div>
+		</div>
+		<!--  -->
+		<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+        <!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.min.js"></script>
+
+		<!-- Custom Theme Scripts -->
+		<script src="js/custom.min.js"></script>
+		<script src='js/ngDialog.js'></script>
+		
+		<!-- /index.js -->
+		
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js'></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
+
+	</body>
+</html>

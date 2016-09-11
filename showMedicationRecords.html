@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app1">
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sanjeevni EHR</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css'>
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- prettyphoto -->
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet">
+
+    <!-- new files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="js/ng-draggable-widgets.js"></script>
+    <script src="demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+    <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- ng-Dialog box  -->
+    
+    <link rel="stylesheet" href="css/ngDialog.css">
+    <link rel="stylesheet" href="css/ngDialog-Default.css">
+
+  </head>
+
+  <body class="nav-md" ng-controller="medicationRecords">
+
+    <div class="container">
+        <div class="row">
+        <div class="navbar navbar-default" style="background-color: #021712;;"role="navigation">
+          <div class="col-md-4">
+          <div class="navbar-header" style="padding-left:60px; background-color: #021712;">
+            <a href="index.html"><span class="navbar-brand">Sanjeevni EHR</span></a>
+            
+          </div>
+          </div>
+
+          <div class="col-md-6">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only" class="navbar-toggle">Toggle Navigation</span>
+              <span class-"icon-bar">--</span>
+            </button>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav" style="padding-left:100px;">
+                  <li>
+                    <a href="#" class="">
+                      <span style="color:#fff">Dashboard</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Help</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Community</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span style="color:#fff">Premium</span>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#">
+                  <span class="glyphicon glyphicon-off" style="color:#fff">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left_col col-xs-3" style="background-color:#072C0E" style="height:100%;">
+          <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <a  class="preview" href="images/ami.jpg" rel="prettyPhoto">
+                  <img src="images/ami.jpg" alt="..." class="img-circle profile_img">
+                </a>
+              </div>
+              <br>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br>
+
+             <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <span style="font-size:medium">Amitesh Jaiswal</span>
+                    <br><br><br><br>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-edit"></i> Allergies <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showAllAlergies.html">Show All Allergies</a></li>
+                      <li><a href="addAllergies.html">Add new Allergy</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medical Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/showAllMedicalHistoryRecord.html">Show All Medical History Record</a></li>
+                      <li><a href="/addMedicalHistoryRecord.html">Add Medical Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Medications Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showMedicationRecords.html">Show Medication Record</a></li>
+                      <li><a href="addMedicationRecord.html">Add Medication Record</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Vaccine & Immunization Record <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="showTestResults.html">Show Test Record</a></li>
+                      <li><a href="addMedicalTest.html">Add Test Result</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="showDoctorNotes.html"><i class="fa fa-desktop"></i> Doctor Notes</a></li>
+                  <li><a href="twitter.html"><i class="fa fa-clone"></i> Twitter Sentiments</a></li>
+                  <li><a href="wordCloud.html"><i class="fa fa-clone"></i> Word Cloud</a></li>
+                  <li><a><i class="fa fa-clone"></i> Spark Analytics</a></li>
+                  <li><a><i class="fa fa-bar-chart-o"></i>Analytics Dashboard <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Twitter</a></li>
+                      <li><a href="fixed_footer.html">Realtime</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="updateProfile.html"><i class="fa fa-clone"></i> Update Profile </a></li>
+                  <li><a><i class="fa fa-clone"></i> View Profile </a></li>
+                  <li><a href="start.html"><i class="fa fa-clone"></i> Logout </a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar -->
+           
+        </div>
+        <div class="col-xs-8">
+          <div role="main">
+            <!-- Displaying all widgets using ng-repeat -->
+            <br>
+              <div style="text-align:center;">
+                <img src="images/MedicalHistory_Record_logo.jpg" style="height:30px; width:30px; "> <span style="font-size:medium">All Medication History Records</span>
+              </div><hr>
+                <br>      
+            <form class="form-inline">
+              <div class="form-group">
+                <label >Search</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+              </div>
+            </form>
+
+       <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Medication Date</th>
+                <th>Mediaction Name</th>
+                <th>Prescriber Name</th>
+                <th>Qose Qantity</th>
+                <th>Instructions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr dir-paginate="record in MedicationRec|filter:search|itemsPerPage:5">
+                <div ng-if="record.record_type == 'MedicalHistory'">
+                  <td>{{record.date_of_medication}}</td>
+                  <td>{{record.name_of_mediaction}}</td>
+                  <td>{{record.prescriber_name}}</td>
+                  <td>{{record.dose_qantity}}</td>
+                  <td>{{record.instructions}}</td>
+                </div>
+              </tr>
+            </tbody>
+          </table> 
+          
+          <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true" >
+          </dir-pagination-controls>
+
+            
+        </div>
+        <br>
+        <a href="addMedicationRecord.html"><button type="button" class="btn btn-primary"> Add new record </button></a>
+        </div>
+        <div class="col-xs-1"></div>
+      </div>
+      <div class="row" style="background-color:#021712; height:50px;">
+        <p style="text-align:center;color:#fff; padding:10px;"><strong>@Copy-right Sanjeevni-EHR</strong></p>
+      </div>
+    </div>
+    
+   <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="js/custom.min.js"></script>
+    <script src='js/ngDialog.js'></script>
+    <script type="text/javascript" src="js/dirPagination.js"></script>
+    <!-- /index.js -->
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
+
+  </body>
+</html>
